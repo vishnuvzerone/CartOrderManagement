@@ -30,6 +30,7 @@ namespace CartManagement
                             OfferPrice = CalculateNItemOfferPrice(crtItm.Quantity, crtItm.UnitPrice, promObj);
                             break;
                         case PromotionType.ComboPromo:
+                            ////Used to apply combination promo
                             if(!CheckCombinationExists(cartItems.Select(x => x.SKU).ToList(), promObj.SKUs))
                             {
                                 OfferPrice = crtItm.Quantity * crtItm.UnitPrice;
